@@ -1,0 +1,10 @@
+.hide {
+    display: none!important;
+}
+.time {
+  width: 70px;
+}
+.nebula-options label {
+    width: 130px;
+    display: inline-block;
+}
