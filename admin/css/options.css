@@ -1,0 +1,71 @@
+/*
+* === options and meta tabs styles
+*/
+/* format columns for labels and input values */
+.nebula-options label {
+    width: 130px;
+    display: inline-block;
+}
+.nebula-options h4 {
+    margin: 0;
+}
+.meta-side label {
+    width: 100px;
+    display: inline-block;
+}
+#simple_tickets, #simple_registration {
+    width: 50%;
+}
+#ticket_limits {
+    width:45%;
+    float:right;
+}
+.inline {
+    display: inline-block;
+}
+#wpfooter {
+    display: none;
+}
+
+/* styles for vertical tabs */
+  .ui-vabs-vertical { width: 55em; }
+  .ui-tabs-vertical .ui-tabs-nav { padding: .2em .1em .2em .2em; float: left; width: 20%; }
+  .ui-tabs-vertical .ui-tabs-nav li { clear: left; width: 100%; border-bottom-width: 1px !important; border-right-width: 0 !important; margin: 0 -1px .2em 0; }
+  .ui-tabs-vertical .ui-tabs-nav li a { display:block; }
+  .ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active { padding-bottom: 0; padding-right: .1em; border-right-width: 1px; }
+  .ui-tabs-vertical .ui-tabs-panel { padding: 1em; float: right; width: 75%;}
+
+.nebula-options > label {
+    width: 130px;
+    display: inline-block;
+}
+input.meta-time {
+    width: 40px;
+}
+/* used by background video settings */
+.hide {
+    display: none;
+}
+#featured-second-image-container {
+    width: 320px;
+}
+#featured-first-image-container img,
+#featured-second-image-container img
+{
+	width:  auto;
+	height: auto;
+        max-height: 400px;
+        max-width: 100%;
+}
+
+#featured-first-image-info,
+#featured-second-image-info
+{
+	display: none;
+}
+.show {
+    display: block;
+}
+.hide {
+    display: none;
+}
