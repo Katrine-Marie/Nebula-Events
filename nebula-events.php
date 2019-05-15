@@ -30,3 +30,48 @@ define ( 'nebula_EVENTS_transient', '_nebula_events_welcome' );
 
 // include any post types we need defined
 include_once ( nebula_EVENTS_DIR . 'init/class-event-post-type.php');
+
+
+$startup = new Initialization();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*******************************************************************************/
+/*
+ * Initiate the plugin routines.
+ * keep with root file.
+ */
+class Initialization{
+
+    public function __construct(){
+        register_activation_hook( __FILE__, array($this, 'plugin_activated' ));
+        register_deactivation_hook( __FILE__, array($this, 'plugin_deactivated' ));
+        register_uninstall_hook( __FILE__, array($this, 'plugin_uninstall' ) );
+    }
+
+    public static function plugin_activated(){
+        set_transient(nebula_EVENTS_transient, true,30);
+
+        $register_post_type = new event_post_type();
+        $register_post_type->register_event_post_type();
+        flush_rewrite_rules();
+    }
+    public function plugin_deactivated(){
+        delete_transient( nebula_EVENTS_transient );
+    }
+    public function plugin_uninstall() {
+        delete_transient( nebula_EVENTS_transient );
+    }
+}
