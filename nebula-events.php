@@ -17,3 +17,10 @@ namespace nebula\events;
 if ( ! defined( 'ABSPATH' ) ) {
 	exit( 'Go away!' );
 }
+
+$myplugin_url = plugin_dir_url(__FILE__);
+if ( is_ssl() ) {
+  $myplugin_url = str_replace('http://', 'https://', $myplugin_url);
+}
+
+ 
