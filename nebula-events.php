@@ -23,4 +23,7 @@ if ( is_ssl() ) {
   $myplugin_url = str_replace('http://', 'https://', $myplugin_url);
 }
 
- 
+define ( 'nebula_EVENTS_URL', $myplugin_url);
+define ( 'nebula_EVENTS_DIR', plugin_dir_path( __FILE__));
+define ( 'nebula_EVENTS_VERS', '1.0.0');
+define ( 'nebula_EVENTS_transient', '_nebula_events_welcome' );
