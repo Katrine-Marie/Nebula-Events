@@ -6,7 +6,6 @@ include_once nebula_EVENTS_DIR .'common/class-common.php';
 
 if (!class_exists('options_admin')) {
 
-
     class options_admin extends \nebula\common\nebula_Common {
 
         public function __construct()  {
@@ -29,15 +28,14 @@ if (!class_exists('options_admin')) {
             $this->mypage = 'events-options-page';
             // name of the form post action
             $this->myaction = 'nebula_event_settings';
-            // add the menu if not setup elsewhere
+
             // add_action( 'admin_menu', array( $options_admin, 'add_options_page' ) );
             add_action( 'admin_post_'.$this->myaction, array( $this, 'validate_options' ) );
             // only call enqueue when our page is being called.
             if (($pagenow == 'options-general.php' ) && ( $_GET["page"] == $this->mypage )) {
-                       }
                 add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_styles' ) );
                 add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
-
+            }
             $this->LoadOptions();
             $this->UpgradeOptions();
         }
@@ -116,24 +114,17 @@ if (!class_exists('options_admin')) {
            }
            $this->Save_Options($this->nebula_data, $this->nebula_options);
         }
-    /**
-     * Registers the stylesheets or options page
-     *
-     * @since 0.2.0
-     */
-    public function enqueue_styles() {
 
+    public function enqueue_styles() {
             wp_register_style(
                     $this->myname,
                     nebula_EVENTS_URL . 'admin/css/options.css',
                     array()
             );
-
-
     }
 
     public function enqueue_scripts() {
-            // wp_enqueue_media();
+
     }
 }
 }
