@@ -27,3 +27,6 @@ define ( 'nebula_EVENTS_URL', $myplugin_url);
 define ( 'nebula_EVENTS_DIR', plugin_dir_path( __FILE__));
 define ( 'nebula_EVENTS_VERS', '1.0.0');
 define ( 'nebula_EVENTS_transient', '_nebula_events_welcome' );
+
+// include any post types we need defined
+include_once ( nebula_EVENTS_DIR . 'init/class-event-post-type.php');
