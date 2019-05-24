@@ -17,18 +17,18 @@ $my_side_data->LoadOptions();
     <h2><?php echo get_the_title(); ?></h2>
 <h3><?php echo $my_side_data->GetMetaOption('event_date') . ' From '. $my_side_data->GetMetaOption('time_start'). ' to '.$my_side_data->GetMetaOption('time_end');?>
 <?php
+// check for location, display if exists
 if ( $my_table_data->GetMetaOption('location_plysical')  != 1 ) {
     ?>
     <br/>@ <a href='#event-location'><?php echo $my_table_data->GetMetaOption('venue_name'); ?></a>
 <?php
 }
-// no location
 ?>
-    </h3>
+</h3>
 
 
 </div>
-<?php 
+<?php
 // TODO: featured image
 // the_post_thumbnail( 'medium', array( 'class' => 'event-thumb' ) );
 ?>
