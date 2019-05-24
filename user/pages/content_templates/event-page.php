@@ -1,9 +1,5 @@
 <?php
 
-/*
-Content for event-page
- */
-
 namespace nebula\events;
 global $post;
 
@@ -15,7 +11,6 @@ $my_data_options = new custom_meta_data('nebula-events-options','apcev_','option
 $my_table_data->LoadOptions();
 $my_side_data->LoadOptions();
 
-// Remember that a template is likely to have the title and maybe the featured image above???
 ?>
 
 <div id="event-title" class="event-title">
@@ -33,7 +28,10 @@ if ( $my_table_data->GetMetaOption('location_plysical')  != 1 ) {
 
 
 </div>
-<?php // the_post_thumbnail( 'medium', array( 'class' => 'event-thumb' ) ); ?>
+<?php 
+// TODO: featured image
+// the_post_thumbnail( 'medium', array( 'class' => 'event-thumb' ) );
+?>
 <div class="event-content">
 
 <h3>Event Information</h3>
