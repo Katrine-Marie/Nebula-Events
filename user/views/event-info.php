@@ -1,5 +1,5 @@
 
-<div nebula-event>
+<div class="nebula-event">
 <?php
 $loop = new WP_Query( array( 'post_type' => 'nebula-event',
         'post__in' => array($atts['id'])     )
