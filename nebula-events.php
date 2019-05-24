@@ -34,17 +34,19 @@ include_once ( nebula_EVENTS_DIR . 'init/class-event-post-type.php');
 
 $startup = new Initialization();
 
+function launch () {
+
+	include_once nebula_EVENTS_DIR .'admin/pages/class-options.php';
+	$my_options = new options_admin();
+	add_action( 'admin_menu', array( $my_options, 'add_options_page' ) ); 
 
 
 
 
 
 
-
-
-
-
-
+}
+launch();
 
 
 
