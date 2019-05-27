@@ -43,7 +43,7 @@ function launch () {
 	require_once ( nebula_EVENTS_DIR . 'admin/class-welcome.php');
 	$my_welcome = new welcome_class();
 
-
+	$my_event_post_type = new event_post_type();
 
 
 }
