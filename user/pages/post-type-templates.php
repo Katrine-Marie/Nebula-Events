@@ -1,21 +1,15 @@
 <?php
-/**
- * post type templates.
- * thanks to Jeroen Sormani for the inspiration
- * http://jeroensormani.com
- * Description:		View the content with templates
- *
- */
 
 namespace nebula\events;
 
-
 class custom_templates {
+
 	public function __construct( ) {
 		$this->post_type = 'nebula-event';
 		$this->template_file ='event-template.php';
 		add_filter( 'template_include', array($this,'custom_template_loader') );
 	}
+
 	/**
 	 * Template loader.
 	 *
@@ -47,6 +41,7 @@ class custom_templates {
 		return $template;
 
 	}
+
 	/**
 	 * Locate template.
 	 *
@@ -90,8 +85,6 @@ class custom_templates {
 		return apply_filters( 'custom_locate_template', $template, $template_name, $template_path, $default_path );
 
 	}
-
-
 
 
 	/**
