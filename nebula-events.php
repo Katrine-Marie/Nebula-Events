@@ -54,7 +54,17 @@ function launch () {
 
  		include (nebula_EVENTS_DIR . 'user/pages/class-custom-meta-data.php');
 
-		
+		switch( $my_options->GetOption('single-layout')) {
+			case 'content1';
+				include nebula_EVENTS_DIR . 'user/pages/content-filter.php';
+				$do_content = new event_content();
+				break;
+			case 'template1';
+				include nebula_EVENTS_DIR . 'user/pages/post-type-templates.php';
+				$post_templates = new custom_templates();
+				break;
+			}
+
 	}
 
 
