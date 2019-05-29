@@ -45,6 +45,14 @@ function launch () {
 
 	$my_event_post_type = new event_post_type();
 
+	if (is_admin()) {
+  	include_once ( nebula_EVENTS_DIR . 'admin/class-admin-control.php');
+    $my_control = new admin_control();
+  }
+
+
+
+
 
 }
 launch();
