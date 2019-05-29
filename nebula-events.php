@@ -50,7 +50,12 @@ function launch () {
     $my_control = new admin_control();
   }
 
+	if (!is_admin()) {
 
+ 		include (nebula_EVENTS_DIR . 'user/pages/class-custom-meta-data.php');
+
+		
+	}
 
 
 
