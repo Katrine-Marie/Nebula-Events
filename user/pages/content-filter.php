@@ -10,22 +10,24 @@ class event_content {
 
     function filter_the_content_in_the_main_loop( $content ) {
 
-        // Check if we're inside the main loop in a single post page.
-        if ( is_single() && in_the_loop() && is_main_query() ) {
+        if ( is_single() && is_main_query() ) {
             if ( get_post_type( get_the_ID() ) == 'nebula-event') {
                 wp_enqueue_style('user-content');
                    ob_start();
                     include nebula_EVENTS_DIR . 'user/pages/content_templates/event-page.php';
                     $msg = ob_get_contents();
                     ob_end_clean();
-            }
+            }else {
+							$msg = $content;
+						}
             return  $msg;
-
         }
         // we are in the loop to will be called for each archive entry.
         if ( is_post_type_archive( 'nebula-event' ) ) {
-            return  'archive' .  $content;
-        }
+            return  $content;
+        }else {
+					return $content;
+				}
     }
 
     function content_style () {
