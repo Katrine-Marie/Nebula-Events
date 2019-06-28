@@ -1,5 +1,5 @@
 jQuery(document).ready(function () {
-  jQuery( "#event_datepicker" ).datepicker({ minDate: -20, maxDate: "+1M +10D", dateFormat: "d MM, yy",
+  jQuery( "#event_datepicker" ).datepicker({ minDate: 0, maxDate: "+12M +10D", dateFormat: "d. MM, yy",
       altField: "#date_sort",       altFormat: "yy/mm/dd"});
   jQuery('#event_start').timepicker();
   jQuery('#event_end').timepicker();
@@ -61,7 +61,7 @@ jQuery(document).ready(function () {
        location_set();
       });
 
-      
+
 
   function organiser_set() {
       if (jQuery( "#organiser_show" ).is(':checked'))
